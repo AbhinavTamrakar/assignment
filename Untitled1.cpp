@@ -28,8 +28,7 @@ public:
         pay = p;
     }
 
-    void display() {
-        person::display();
+  		void display() {
         cout << "Pay amount: " << pay << endl;
     }
 };
@@ -43,20 +42,19 @@ public:
         strcpy(experience, e);
     }
 
-    void display() {
-        person::display();
+        void display() {
         cout << "Experiences: " << experience << endl;
     }
 };
 
 class master : virtual public account, virtual public admin {
 public:
-    master(char n[], int c, char e[], float p) : person(n, c), account(n, c, p), admin(n, c, e) {}
+    master(char n[], int c, char e[], float p) : person(n, c), account( n,c,p), admin(n,c,e) {}
 
     void display() {
         person::display();
-        cout << "Experienced: " << experience << endl;
-        cout << "Pay: " << pay << endl;
+        account::display();
+        admin::display();
     }
 };
 
